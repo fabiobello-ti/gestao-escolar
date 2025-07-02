@@ -1,0 +1,15 @@
+services: # Define os serviços (contêineres) que compõem a aplicação.
+  app:
+    build: . # A instrução 'build: .' diz ao Docker Compose para construir uma imagem
+    # a partir do Dockerfile localizado no diretório atual (.).
+    container_name: gestao-escolar-api # Define um nome para o contêiner.
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do host (seu computador) para a porta 8000 do contêiner.
+        # A sintaxe é "PORTA_HOST:PORTA_CONTAINER".
+        # Isso permite que você acesse a API em http://localhost:8000.
+    volumes:
+      - .:/app # Monta o diretório atual (onde está o seu código) em /app dentro do container.
+
+
+
+
